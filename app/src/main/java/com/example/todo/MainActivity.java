@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,8 +31,20 @@ public class MainActivity extends AppCompatActivity {
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,items);
         listView.setAdapter(adapter);
     }
+    //adding the items
     public void AddToDoItem(View view) {
         adapter.add(editText.getText().toString());
         editText.setText("");
+    }
+    //for removing the items
+    private void setUpListViewListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int i, long l) {
+                items.remove(position);
+                adapter.notifyDataSetChanged();
+                return true;
+            }
+        });
     }
 }
