@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightGreen"
+    android:background="@drawable/im"
     android:padding="@android:dimen/app_icon_size"
     tools:context=".MainActivity">
 
@@ -14,7 +14,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/text"
+            android:id="@+id/text1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Add Your task"
@@ -24,11 +24,10 @@
 
         </EditText>
         <Button
-            android:onClick="AddToDoItem"
             android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text"
+            android:layout_below="@+id/text1"
             android:layout_centerHorizontal="true"
             android:text="Add Item"
             android:background="#0B5345"
